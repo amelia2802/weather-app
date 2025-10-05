@@ -34,8 +34,8 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
+<img width="1521" height="1062" alt="Frontend Mentor _ Weather app (06 10 2025 00_45)" src="https://github.com/user-attachments/assets/69b85737-da73-4c12-9aed-9c6066be123e" />
 
-![](./screenshot.jpg)
 
 
 ### Links
