@@ -14,9 +14,9 @@ export default function DashboardPage() {
 
     return (
         <div className="flex flex-col items-center gap-16">
-            <h2 className="text-5xl font-bold"> How&apos;s the sky looking today? </h2>
+            <h2 className="text-5xl text-center font-bold"> How&apos;s the sky looking today? </h2>
             <Search onCitySelect={handleCity} />
-            <div className="flex gap-8">
+            <div className="flex gap-8 max-[800px]:flex-col max-[800px]:p-6">
                 <City cityData={city}/>
                 <Hours cityData={city}/>
             </div>

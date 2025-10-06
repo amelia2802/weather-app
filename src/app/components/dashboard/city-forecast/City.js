@@ -88,16 +88,17 @@ export default function City({cityData}){
         if ([71, 73, 75].includes(code)) return "/assets/images/icon-snow.webp";
         if ([95, 96, 99].includes(code)) return "/assets/images/icon-storm.webp";
 
-        return "/assets/images/icon-loading.webp";
+        return "/assets/images/icon-loading.svg";
     }
 
 
     return(
-        <div>
-            <div className="rounded-3xl flex items-center justify-between bg-gradient-to-r from-blue-500 to-blue-700 py-20 px-6 text-white">
+        <div className="max-w-[800px] max-[500px]:w-[100vw]">
+            <div className={`rounded-3xl flex items-center justify-between bg-[url("/assets/images/hero-bg.svg")] bg-gradient-to-r from-blue-500 to-blue-700 bg-cover py-20 px-6 text-white max-[500px]:flex-col max-[500px]:text-center`}>
                 {!weatherData ? (
                     <div className="w-full text-center">
-                        <p className="text-2xl">Loading weather data...</p>
+                        <Image src="/assets/images/icon-loading.svg" alt="loader" width={120} height={120}/>
+                        <p className="text-2xl">Loading...</p>
                     </div>
                 ) : (
                     <>
@@ -106,7 +107,7 @@ export default function City({cityData}){
                             <p className="text-lg">{currentDate.toDateString()}</p>
                         </div>
                         <div className="flex flex-row-reverse items-center">
-                            <p className="text-8xl font-light">{currentTemp}°C</p>
+                            <p className="text-8xl max-[500px]:text-6xl font-light">{currentTemp}°C</p>
                             <Image src={getWeatherIcon(weatherData.daily.weatherCode[0])} alt="weather" width={120} height={120}/>
                         </div>
                     </>
@@ -115,7 +116,7 @@ export default function City({cityData}){
             
             {weatherData && (
                 <>
-                    <div className="flex items-center gap-6 justify-evenly my-8">
+                    <div className="flex max-[500px]:grid items-center gap-6 justify-evenly my-8 grid-flow-col grid-rows-2">
                         <div className="forecast">
                             <h3>Feels like</h3>
                             <p>{currentFeelsLike}°C</p>
@@ -136,7 +137,7 @@ export default function City({cityData}){
                     
                     <div>
                         <h2 className="mb-5 text-xl font-bold">Daily forecast</h2>
-                        <div className="flex items-center justify-between gap-4">
+                        <div className="flex max-[500px]:grid items-center justify-between gap-4 grid-flow-col grid-rows-3">
                             {weatherData.daily.time.slice(0, 7).map((date, index) => {
                                 const maxTemp = Math.round(weatherData.daily.maxTemp[index]);
                                 const minTemp = Math.round(weatherData.daily.minTemp[index]);
@@ -144,8 +145,8 @@ export default function City({cityData}){
                                 return(
                                     <div key={index} className="daily-cast">
                                         <h4>{date.toLocaleDateString('en-US', { weekday: 'short' })}</h4>
-                                        <Image src={getWeatherIcon(weatherData.daily.weatherCode[0])} alt="weather" width={40} height={40}/>
-                                        <div className="flex gap-12">
+                                        <Image src={getWeatherIcon(weatherData.daily.weatherCode[index])} alt="weather" width={40} height={40}/>
+                                        <div className="flex gap-5">
                                             <p>{maxTemp}°</p>
                                             <p>{minTemp}°</p>
                                         </div>

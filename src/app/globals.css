@@ -29,7 +29,7 @@ body {
 }
 
 .forecast{
-  @apply w-48 bg-neutral-800 rounded-3xl p-5 text-3xl;
+  @apply w-48 bg-neutral-800 rounded-3xl p-5 text-3xl max-[500px]:w-full;
 }
 
 .forecast h3{
@@ -37,7 +37,7 @@ body {
 }
 
 .daily-cast{
-  @apply flex flex-col items-center bg-neutral-800 rounded-xl px-3 py-4 text-lg;
+  @apply flex flex-col items-center bg-neutral-800 rounded-xl px-2 py-4 w-24 h-40 justify-between text-lg;
 }
 
 .hourly{

@@ -33,16 +33,16 @@ export default function Search({onCitySelect}){
 
     return(
         <div>
-            <div className="flex items-center gap-4 ">
-                <Image className="absolute ml-6" src={"./assets/images/icon-search.svg"} alt="search" width={16} height={16} />
+            <div className="flex items-center gap-4 max-[500px]:flex-col ">
+                <Image className="absolute ml-6 max-[500px]:mt-5 max-[500px]:mr-[16em]" src={"./assets/images/icon-search.svg"} alt="search" width={16} height={16} />
                 <input 
-                    className="w-xl bg-neutral-700 rounded-xl px-12 py-4 cursor-pointer" 
+                    className="w-xl max-[500px]:w-full bg-neutral-700 rounded-xl px-12 py-4 cursor-pointer" 
                     type="text" 
                     placeholder="Search for a city, e.g., New York" 
                     value={searchCity} 
                     onChange={handleChange}
                 />
-                <button className="bg-blue-700 rounded-2xl px-6 py-4 cursor-pointer" onClick={searchCoordinates}>Search</button>
+                <button className="max-[500px]:w-full bg-blue-500 rounded-2xl px-6 py-4 cursor-pointer hover:outline outline-offset-4 outline-blue-700 hover:bg-blue-700" onClick={searchCoordinates}>Search</button>
             </div>
         </div>
     )

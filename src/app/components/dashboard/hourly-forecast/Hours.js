@@ -19,7 +19,7 @@ export default function Hours({cityData}){
             const params = {
                 "latitude": currentCity.latitude,
                 "longitude": currentCity.longitude,
-                "hourly": "temperature_2m,precipitation,relativehumidity_2m,windspeed_10m,apparent_temperature",
+                "hourly": "temperature_2m,precipitation,relativehumidity_2m,windspeed_10m,apparent_temperature,weathercode",
             };
 
             const url = "https://api.open-meteo.com/v1/forecast";
@@ -38,7 +38,7 @@ export default function Hours({cityData}){
                         (t) => new Date((t + response.utcOffsetSeconds()) * 1000)
                     ),
                     temperature: hourly.variables(0).valuesArray(),
-                    weatherCode: hourly.variables(1).valuesArray(),
+                    weatherCode: hourly.variables(5).valuesArray(),
                 },
             };
             
@@ -48,16 +48,48 @@ export default function Hours({cityData}){
         getWeather();
     }, [currentCity.latitude, currentCity.longitude]);
 
-    if (!weatherData) {
-        return <div>Loading...</div>;
-    }
-
     const dayOptions = [];
     for(let i=0;i<7;i++){
         const date = new Date();
         date.setDate(date.getDate() + i);
         const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
         dayOptions.push({label:dayName,value:i});
+    }
+
+    if (!weatherData) {
+        return  <div className="bg-neutral-800 p-6 rounded-xl max-h-[670px] overflow-y-auto">
+            <div className="flex gap-3 items-center">
+                <h4>Hourly forecast</h4>
+                <div className="relative">
+                <button 
+                    className="flex bg-neutral-600 px-4 py-2 rounded gap-3"
+                    onClick={()=> setIsDropdownOpen(!isDropdownOpen)}
+                >
+                    {dayOptions[selectDay].label}
+                    <Image src="./assets/images/icon-dropdown.svg" alt="dropdown" width={16} height={16} /> 
+                </button>
+
+                {isDropdownOpen && (
+                        <div className="w-56 rounded-xl p-2 absolute top-12 -left-5 bg-neutral-800 border border-neutral-600 rounded shadow-lg z-10">
+                            {dayOptions.map((day) => (
+                                <button
+                                    key={day.value}
+                                    className={`w-full text-left p-2 rounded-xl hover:bg-neutral-700 text-white ${
+                                        selectDay === day.value ? 'bg-neutral-600' : ''
+                                    }`}
+                                    onClick={() => {
+                                        setSelectDay(day.value);
+                                        setIsDropdownOpen(false);
+                                    }}
+                                >
+                                    {day.label}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
     }
 
     const startHour = selectDay * 24;
@@ -122,7 +154,7 @@ export default function Hours({cityData}){
                     return(
                         <div key={index} className="hourly">
                             <div className="flex items-center">
-                                <Image src={getWeatherIcon(Math.floor(weatherData.hourly.weatherCode[index]))} alt={`${Math.floor(weatherData.hourly.weatherCode[index])}`} width={40} height={40}/>
+                                <Image src={getWeatherIcon(Math.floor(weatherData.hourly.weatherCode[actualIndex]))} alt={`${Math.floor(weatherData.hourly.weatherCode[actualIndex])}`} width={40} height={40}/>
                                 <h3>{timeString}</h3>
                             </div>
                             <p>{temp} °C</p>
