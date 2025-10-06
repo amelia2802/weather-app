@@ -12,9 +12,8 @@ This is a solution to the [Weather app challenge on Frontend Mentor](https://www
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -70,8 +69,4 @@ The main challenges I faced were fetching the API properly and the lack of under
 - Frontend Mentor - [@amelia2802](https://www.frontendmentor.io/profile/amelia2802)
 - Twitter - [@AmeliaDutta](https://x.com/AmeliaDutta)
 
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 *
