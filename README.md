@@ -34,14 +34,15 @@ Users should be able to:
 - See hover and focus states for all interactive elements on the page
 
 ### Screenshot
-<img width="1521" height="1062" alt="Frontend Mentor _ Weather app (06 10 2025 00_45)" src="https://github.com/user-attachments/assets/69b85737-da73-4c12-9aed-9c6066be123e" />
+<img width="1521" height="1062" alt="Frontend Mentor _ Weather app (06 10 2025 12_10)" src="https://github.com/user-attachments/assets/acacb5fa-2600-44be-b705-45ebdc132dc0" />
+
 
 
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://weather-app-fm30.vercel.app/)
 
 ## My process
 
@@ -57,39 +58,17 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+The main challenges I faced were fetching the API properly and the lack of understanding between the generic API URL and geo-coding API, as well as how to render and display the data on the webpage. I also used React to create the project, so I made several components, and passing the same value without repetition was tricky because siblings can't share values directly. So, I researched more about component hierarchy and passing values. I also struggled with displaying hour, time, and day formats initially, but I learned and applied those, along with calculating how to display weather codes, hourly weather, and times.
 
 ### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
+- Make the units button work to change the metrics
+- Complete some other stretch goals like changing the background images according to the weather, adding a section to add and compare saved locations etc
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Amelia](https://ameliadutta.netlify.app/)
+- Frontend Mentor - [@amelia2802](https://www.frontendmentor.io/profile/amelia2802)
+- Twitter - [@AmeliaDutta](https://x.com/AmeliaDutta)
 
 
 ## Acknowledgments
