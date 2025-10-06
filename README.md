@@ -14,9 +14,6 @@ This is a solution to the [Weather app challenge on Frontend Mentor](https://www
   - [Continued development](#continued-development)
 - [Author](#author)
 
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -40,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL](https://www.frontendmentor.io/solutions/fm30-hackathon-weather-app-IXg2gMVYLL)
 - Live Site URL: [Live Site](https://weather-app-fm30.vercel.app/)
 
 ## My process
@@ -68,5 +65,3 @@ The main challenges I faced were fetching the API properly and the lack of under
 - Website - [Amelia](https://ameliadutta.netlify.app/)
 - Frontend Mentor - [@amelia2802](https://www.frontendmentor.io/profile/amelia2802)
 - Twitter - [@AmeliaDutta](https://x.com/AmeliaDutta)
-
-*
